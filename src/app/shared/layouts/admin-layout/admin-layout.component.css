@@ -1,0 +1,128 @@
+.navbar-default {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: #0d347d;
+    padding: 20px 15px;
+}
+.navbar-default .brand {
+    float: left;
+    padding: 0 30px;
+}
+.navbar-default .brand img {
+    width: 150px;
+}
+.navbar-left {
+    float: left;
+    background-color: #fff;
+    border-radius: 50%;
+    width:30px; height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.navbar-left i { margin-top: 7px; }
+.navbar-right { 
+    float: right; 
+    padding-right: 30px;
+    margin-top: 5px;
+}
+#wrapper #sidebar_nav, 
+#wrapper .main {
+    padding-top: 71px;
+}
+#wrapper .sidebar {
+    transition: all 0.3s ease-in-out;
+    width: 260px;
+    height: 100%!important;
+    float: left;
+    background-color: #2B333E;
+    position: fixed;
+    left: 0;
+    z-index: 9;
+}
+
+.sidebar-scroll {
+    overflow: hidden; width: auto; height: 95%;
+}
+.sidebar .nav > li > a:hover, 
+.sidebar .nav > li > a:focus, 
+.sidebar .nav > li > a.active {
+    color: #fff;
+    background-color: #252c35;
+    background-color: #252c35;
+} 
+.sidebar .nav > li > a.active {
+    border-left-color: #00AAFF;
+}
+.sidebar .nav > li > a {
+    padding: 18px 30px;
+    color: #AEB7C2;
+    border-left: 5px solid transparent;
+}
+.sidebar .nav .nav {
+    background-color: #252c35;
+}
+.sidebar .nav > li > a .icon-right {
+    vertical-align: middle;
+    float: right;
+    position: relative;
+    top: 5px;
+}
+#wrapper .main {
+    transition: all 0.3s ease-in-out;
+    width: calc(100% - 260px);
+    left: 0;
+    position: relative;
+    float: right;
+    background-color: #f5f5fa;
+}
+#wrapper .main .main-content {
+    padding: 28px 10px;
+}
+#wrapper.layout-fullwidth .sidebar 
+{
+    left: -260px; 
+} 
+#wrapper.layout-fullwidth .main {
+    width: 100%; 
+} 
+#wrapper.layout-fullwidth .navbar {
+    left: 0 !important; 
+}
+#wrapper.offcanvas-active .sidebar {
+    left: 0; 
+}
+#wrapper.offcanvas-active .main 
+{
+    width: 100%;
+    position: relative;
+    left: 260px; 
+}
+#wrapper .shadow-wrapper {
+    margin-left: 260px;
+}
+  
+footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #f5f5fa;
+    margin-left: 260px;
+}
+footer .copyright {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 13px;
+}
+#wrapper.layout-fullwidth footer,
+#wrapper.offcanvas-active footer,
+#wrapper.layout-fullwidth .shadow-wrapper,
+#wrapper.offcanvas-active .shadow-wrapper {
+    margin-left: 0px;
+}
+
+@media screen and (min-width: 768px) {
+    
+}

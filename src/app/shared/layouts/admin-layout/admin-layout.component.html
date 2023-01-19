@@ -1,0 +1,80 @@
+<div id="wrapper" class="{{wrapperClass}}">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="brand">
+      <a [routerLink]="['/admin']" href="javascript:void(0);"><img src="assets/images/logo_w.png" class="logo"></a>
+    </div>
+    <div class="navbar-left" (click)="toggleMenu()"><i class="fa {{navBtnClass}} clr-primary"></i></div>
+    <div class="navbar-right">
+      <a class="link-ww" [routerLink]="['/admin', 'login']" href="javascript:void(0);" >Log In</a>&ngsp;<font class="clr-white">|</font>&nbsp;
+      <a class="link-ww" href="javascript:void(0);" >Log Out</a>
+    </div>
+  </nav>
+  <!-- END NAVBAR -->
+  <!-- LEFT SIDEBAR -->
+  <div id="sidebar_nav" class="sidebar collapse in">
+    <div class="sidebar-scroll">
+      <nav>
+        <ul class="nav">
+          <li>
+            <a [routerLink]="['/admin', 'dashboard']" href="javascript:void(0);" class="{{dashBoardMenuClass}}">
+              <i class="fa fa-home"></i> <span>Dashboard</span> <i class="fa fa-angle-double-right icon-right"></i>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/admin', 'special', 'list']" href="javascript:void(0);" class="{{specialMenuClass}}">
+              <i class="fa fa-th-large"></i> <span>Specialization</span> <i class="fa fa-angle-double-right icon-right"></i>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/admin', 'blog', 'list']" href="javascript:void(0);" class="{{blogMenuClass}}">
+              <i class="fa fa-comment"></i> <span>Blog</span> <i class="fa fa-angle-double-right icon-right"></i>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/admin', 'user', 'list']" href="javascript:void(0);" class="{{userMenuClass}}">
+              <i class="fa fa-user"></i> <span>User</span> <i class="fa fa-angle-double-right icon-right"></i>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/admin', 'user', 'activity']" href="javascript:void(0);" class="{{activityMenuClass}}">
+              <i class="fa fa-tag"></i> <span>Activity</span> <i class="fa fa-angle-double-right icon-right"></i>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/admin', 'setting']" href="javascript:void(0);" class="{{settingMenuClass}}">
+              <i class="fa fa-bars"></i> <span>Setting</span> <i class="fa fa-angle-double-right icon-right"></i>
+            </a>
+          </li>
+          <!--<li>
+            <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+            <div id="subPages" class="collapse ">
+              <ul class="nav">
+                <li><a href="page-profile.html" class="">Profile</a></li>
+                <li><a href="page-login.html" class="">Login</a></li>
+                <li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
+              </ul>
+            </div>
+          </li>-->
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- END LEFT SIDEBAR -->
+  <!-- MAIN -->
+  <div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- END MAIN CONTENT -->
+  </div>
+  <!-- END MAIN -->
+  <div class="clearfix"></div>
+  <div class="shadow-wrapper shadow-up"></div>
+  <footer>
+    <div class="container-fluid">
+      <p class="copyright">Copyright &copy; Copyright © 2018 Nigeria Health System</p>
+    </div>
+  </footer>
+</div>
