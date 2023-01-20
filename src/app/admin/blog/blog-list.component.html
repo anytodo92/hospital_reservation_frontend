@@ -1,0 +1,76 @@
+<div class="container-fluid">
+  <div class="panel panel-headline underline extend">
+    <div class="panel-heading">
+      <h3 class="panel-title">Blog > List</h3>
+    </div>
+    <div class="panel-body">
+      <div class="search-box">
+        <div class="row1">
+          <div class="col-md-1"><label>Period:</label></div>
+          <div class="col-md-3">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+              <input id="begin_date" class="form-control" placeholder="Begin Date" type="text"
+                [(ngModel)]="beginDate" />
+            </div>
+          </div>
+          <div class="pull-left"><label>~</label></div>
+          <div class="col-md-3">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+              <input id="end_date" class="form-control" placeholder="End Date" type="text"
+                [(ngModel)]="endDate" />
+            </div>
+          </div>
+        </div>
+        <div class="row1">
+          <div class="col-md-1"><label>Keyword:</label></div>
+          <div class="col-md-6"><input [(ngModel)]="keyword" type="text" class="form-control" placeholder="searh keyword"></div>
+          <div class="col-md-3"><button (click)="search()" class="btn btn-primary btn-primary-bg">Search</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-body">
+      <p>4 row's result for searching.</p>
+      <table class="table table-striped margintop10">
+        <thead>
+          <tr>
+            <th width="30">No</th>
+            <th width="100">Title</th>
+            <th width="80">Type</th>
+            <th>Content</th>
+            <th width="50">Rate</th>
+            <th width="100">Specialization</th>
+            <th width="150">User</th>
+            <th width="100">Date &amp; Time</th>
+            <th width="80"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let blog of blogList; let num = index;">
+            <td>{{num + 1}}</td>
+            <td><a [routerLink]="['/admin', 'blog', 'detail', blog.id]" class="link-bb" href="javascript:void(0);">{{blog.title}}</a></td>
+            <td>{{typeList[blog.type]}}</td>
+            <td>{{blog.content}}</td>
+            <td>{{blog.rate}}</td>
+            <td><a [routerLink]="['/admin', 'special', 'detail', blog.specialId]" class="link-bb" href="javascript:void(0);">{{blog.specialName}}</a></td>
+            <td>
+              <div class="user-info">
+                <img src="{{blog.userImage}}" alt="{{blog.userName}}" class="img-circle pull-left avatar">
+                <a [routerLink]="['/admin', 'user', 'detail', blog.userId]" class="link-bb name" href="javascript:void(0);">{{blog.userName}}</a>
+              </div>
+            </td>
+            <td>{{blog.regdate}}</td>
+            <td>
+              <button class="btn btn-danger btn-danger-bg" (click)="deleteBlog(blog.id)" >Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row1">
+        <app-pagenator [page]="1" [total]="5" [callback]="pageHandler" ></app-pagenator>
+      </div>
+    </div>
+  </div>
+</div>
+  
