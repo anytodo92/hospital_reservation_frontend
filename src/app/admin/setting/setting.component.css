@@ -1,0 +1,43 @@
+.panel-body {
+    padding-top: 30px!important;
+}
+.tab-bar {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+.tab-bar .tab {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #000a12;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+.tab-bar .tab.active {
+    border-bottom:2px solid #00AAFF;
+}
+
+.security .row1 {
+    padding: 10px 20px;
+}
+
+.security .titl {
+    float: left;
+    width: 25%;
+    margin-left: 10%;
+}
+
+.security .contt {
+    float: left;
+    width: 55%;
+    margin-right:10%;
+}
+
+.security .err {
+    color: #ef6945;
+    display: none;
+}
+
+.security .err.active {
+    display: block;
+}
