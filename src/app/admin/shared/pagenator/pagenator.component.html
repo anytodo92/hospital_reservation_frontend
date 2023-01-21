@@ -1,0 +1,17 @@
+<div class="row" align="center">
+  <div class="dib">
+    <ul class="pagination pull-left mt0">
+      <li class="{{page == 1 ? 'disabled' : ''}}">
+        <a class="left" href="javascript:void(0)" (click)="go(1)">&lt;</a>
+      </li>
+      <li *ngFor="let idx of pageItemList" class="{{page == idx ? 'active' : ''}}">
+        <a href="javascript:void(0)" style="z-index:1;" (click)="go(idx)" >{{idx}}</a>
+      </li>
+      <li class="{{page == total ? 'disabled' : ''}}">
+        <a class="right1" href="javascript:void(0)" (click)="go(total)">&gt;</a>
+      </li>
+    </ul>
+  </div>
+</div>
+  
+  
