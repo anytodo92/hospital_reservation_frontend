@@ -1,0 +1,27 @@
+  <div id="wrapper">
+    <div class="vertical-align-wrap">
+      <div class="vertical-align-middle">
+        <div class="auth-box ">
+          <div class="content">
+            <div class="header">
+              <div class="logo text-center"><img src="assets/images/logo1.png"></div>
+              <div class="margintop10">Login to admin account</div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">ID:</label>
+              <input type="text" class="form-control" [(ngModel)]="amdinId" />
+            </div>
+            <div class="form-group">
+              <label class="control-label">Password:</label>
+              <input type="password" class="form-control" [(ngModel)]="adminPwd" />
+            </div>
+            <div class="row1">
+              <span class="floatleft"><input type="checkbox"></span>
+              <span class="floatleft">Remember me</span>
+            </div>
+            <button (click)="login()" class="btn btn-primary btn-primary-bg btn-block margintop10">Log In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
