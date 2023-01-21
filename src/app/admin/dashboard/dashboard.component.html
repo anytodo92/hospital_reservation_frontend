@@ -1,0 +1,215 @@
+<div class="container-fluid">
+  <!-- OVERVIEW -->
+  <div class="panel panel-headline">
+    <div class="panel-heading">
+      <h3 class="panel-title">Total Overview</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="metric">
+            <span class="icon"><i class="fa fa-th-large"></i></span>
+            <p>
+              <span class="number">{{specCount}}</span>
+              <span class="title">Specialization</span>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="metric">
+            <span class="icon"><i class="fa fa-comment"></i></span>
+            <p>
+              <span class="number">{{blogCount}}</span>
+              <span class="title">Blog</span>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="metric">
+            <span class="icon"><i class="fa fa-users"></i></span>
+            <p>
+              <span class="number">{{userCount}}</span>
+              <span class="title">User</span>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="metric">
+            <span class="icon"><i class="fa fa fa-tag"></i></span>
+            <p>
+              <span class="number">{{activityCount}}</span>
+              <span class="title">Activity</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END OVERVIEW -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Top Specialization</h3>
+        </div>
+        <div class="panel-body no-padding">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th width="10">No</th>
+                <th width="50">Name</th>
+                <th width="50">Location</th>
+                <th width="10">Rate</th>
+                <th width="30">Date &amp; Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let special of specialList; let num = index">
+                <td>{{num + 1}}</td>
+                <td><a [routerLink]="['/admin', 'special', 'detail', special.id]" class="link-bb" href="javascript:void(0);">{{special.name}}</a></td>
+                <td>{{special.location}}</td>
+                <td>{{special.rate}}</td>
+                <td>{{special.regdate}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-12 text-right">
+              <a [routerLink]="['/admin', 'special', 'list']" href="javascript:void(0);" class="btn btn-primary btn-primary-bg">View All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Recent Blog</h3>
+        </div>
+        <div class="panel-body no-padding">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th width="10">No</th>
+                <th width="50">Title</th>
+                <th width="50">Type</th>
+                <th width="10">Rate</th>
+                <th width="30">Date &amp; Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let blog of blogList; let num = index">
+                <td>{{num + 1}}</td>
+                <td><a [routerLink]="['/admin', 'blog', 'detail', blog.id]" class="link-bb" href="javascript:void(0);">{{blog.title}}</a></td>
+                <td>{{typeList[blog.type]}}</td>
+                <td>{{blog.rate}}</td>
+                <td>{{blog.regdate}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-12 text-right">
+              <a [routerLink]="['/admin', 'blog', 'list']" href="javascript:void(0);" class="btn btn-primary btn-primary-bg">View All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Recent User</h3>
+        </div>
+        <div class="panel-body no-padding">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th width="10">No</th>
+                <th width="50">Name</th>
+                <th width="50">State</th>
+                <th width="10">City</th>
+                <th width="30">Date &amp; Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of userList; let num = index">
+                <td>{{num + 1}}</td>
+                <td><a [routerLink]="['/admin', 'user', 'detail', user.id]" class="link-bb" href="javascript:void(0);">{{user.name}}</a></td>
+                <td>{{user.state}}</td>
+                <td>{{user.city}}</td>
+                <td>{{user.regdate}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-12 text-right">
+              <a [routerLink]="['/admin', 'user', 'list']" href="javascript:void(0);" class="btn btn-primary btn-primary-bg">View All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Recent User Activity</h3>
+        </div>
+        <div class="panel-body">
+          <ul class="list-unstyled activity-list">
+            <li *ngFor="let activity of activityList; let num = index;">
+              <img src="{{activity.userImage}}" alt="{{activity.userName}}" class="img-circle pull-left avatar">
+              <p *ngIf="activity.type == 1">
+                <a [routerLink]="['/admin', 'user', 'detail', activity.userId]" class="link-bb" href="javascript:void(0);">{{activity.userName}}</a> has login to the site. 
+                <span class="timestamp">{{activity.regdate}}</span>
+              </p>
+              <p *ngIf="activity.type == 2">
+                <a [routerLink]="['/admin', 'user', 'detail', activity.userId]" class="link-bb" href="javascript:void(0);">{{activity.userName}}</a> has registered to the site. 
+                <span class="timestamp">{{activity.regdate}}</span>
+              </p>
+              <p *ngIf="activity.type == 3">
+                <a [routerLink]="['/admin', 'user', 'detail', activity.userId]" class="link-bb" href="javascript:void(0);">{{activity.userName}}</a> has updated the profile information.
+                <span class="timestamp">{{activity.regdate}}</span>
+              </p>
+              <p *ngIf="activity.type == 4">
+                <a [routerLink]="['/admin', 'user', 'detail', activity.userId]" class="link-bb" href="javascript:void(0);">{{activity.userName}}</a> has logout from the site.
+                <span class="timestamp">{{activity.regdate}}</span>
+              </p>
+              <p *ngIf="activity.type == 5">
+                <a [routerLink]="['/admin', 'user', 'detail', activity.userId]" class="link-bb" href="javascript:void(0);">{{activity.userName}}</a> has commit the new rating the 
+                <a [routerLink]="['/admin', 'blog', 'detail', activity.value1]" class="link-bb" href="javascript:void(0);">{{activity.value2}}</a>
+                <span class="timestamp">{{activity.regdate}}</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-12 text-right">
+              <a [routerLink]="['/admin', 'user', 'activity']" href="javascript:void(0);" class="btn btn-primary btn-primary-bg">View All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Website Visits</h3>
+        </div>
+        <div class="panel-body">
+          <div id="visits_chart" class="ct-chart"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
