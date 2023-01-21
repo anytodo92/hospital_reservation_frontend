@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="panel panel-headline underline extend">
+    <div class="panel-heading">
+      <h3 class="panel-title">Setting Admin Panel</h3>
+    </div>
+    <div class="panel-body">
+      <div class="tab-bar">
+        <div class="tab active">Security</div>
+      </div>
+      <div class="content security">
+        <div class="row1 margintop30">
+          <div class="titl"><label for="">Current Password</label></div>
+          <div class="contt">
+            <div><input class="form-control" type="password" (blur)="checkCurrentPassword()" [(ngModel)]="currentPassword" /></div>
+            <div class="err {{currentPasswordClass}}">
+              <i class="fa fa-exclamation-circle"></i>
+              This filed is required.
+            </div>
+          </div>
+        </div>
+        <div class="row1">
+          <div class="titl"><label for="">New Password</label></div>
+          <div class="contt">
+            <div><input class="form-control" type="password" (blur)="checkNewPassword()" [(ngModel)]="newPassword" /></div>
+            <div class="err {{newPasswordClass}}">
+              <i class="fa fa-exclamation-circle"></i>
+              This filed is required.
+            </div>
+          </div>
+        </div>
+        <div class="row1">
+          <div class="titl"><label for="">Confirm Password</label></div>
+          <div class="contt">
+            <div><input class="form-control" type="password" (blur)="checkConfPassword()" [(ngModel)]="confPassword" /></div>
+            <div class="err {{confPasswordClass}}">
+              <i class="fa fa-exclamation-circle"></i>
+              This filed is required.
+            </div>
+          </div>
+        </div>
+        <div class="row1" align="center">
+          <button class="btn btn-primary btn-primary-bg" (click)="savePassword()">Save Password</button>
+        </div>    
+      </div>
+    </div>
+  </div>
+</div>
