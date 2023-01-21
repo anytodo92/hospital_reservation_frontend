@@ -1,0 +1,51 @@
+.metric {
+    border-radius: 3px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #DCE6EB;
+}
+.metric .icon {
+    border-radius: 50%;
+    float: left;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #0081c2;
+    text-align: center;
+}
+.metric p {
+    margin-bottom: 0;
+    line-height: 1.2;
+    text-align: right;
+}
+.metric .number {
+    display: block;
+    font-size: 28px;
+    font-weight: 300;
+}
+.metric .title {
+    font-size: 16px;
+}
+.metric .icon i {
+    font-size: 18px;
+    color: #fff;
+}
+
+ul.activity-list > li:not(:last-child) {
+    border-bottom: 1px solid #F0F0F0;
+}
+ul.activity-list > li {
+    padding: 15px 0;
+}
+ul.activity-list > li .avatar {
+    width: 40px;
+}
+ul.activity-list > li > p {
+    margin-bottom: 0;
+    padding-left: 3.5em;
+}
+ul.activity-list > li .timestamp {
+    display: block;
+    font-size: 13px;
+    color: #a3a3a3;
+}
