@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="panel panel-headline underline extend">
+    <div class="panel-heading">
+      <div class="row1">
+      <span class="pull-left margintop10"><h3 class="panel-title">Specializatioin > List</h3></span>
+      <span class="pull-right">
+        <button (click)="createSpecial()" class="btn btn-success btn-success-bg">Create New</button>
+      </span>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="search-box">
+        <div class="row1">
+          <div class="col-md-1"><label>Period:</label></div>
+          <div class="col-md-3">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+              <input id="begin_date" class="form-control" placeholder="Begin Date" type="text"
+                [(ngModel)]="beginDate" />
+            </div>
+          </div>
+          <div class="pull-left"><label>~</label></div>
+          <div class="col-md-3">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+              <input id="end_date" class="form-control" placeholder="End Date" type="text"
+                [(ngModel)]="endDate" />
+            </div>
+          </div>
+        </div>
+        <div class="row1">
+          <div class="col-md-1"><label>Keyword:</label></div>
+          <div class="col-md-6"><input [(ngModel)]="keyword" type="text" class="form-control" placeholder="searh keyword"></div>
+          <div class="col-md-3"><button (click)="search()" class="btn btn-primary btn-primary-bg">Search</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-body">
+      <p>4 row's result for searching.</p>
+      <table class="table table-striped margintop10">
+        <thead>
+          <tr>
+            <th width="30">No</th>
+            <th width="150">Name</th>
+            <th width="150">Location</th>
+            <th>Description</th>
+            <th>Review</th>
+            <th width="50">Rate</th>
+            <th width="200">Date &amp; Time</th>
+            <th width="150"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let special of specialList; let num = index;">
+            <td>{{num + 1}}</td>
+            <td><a [routerLink]="['/admin', 'special', 'detail', special.id]" class="link-bb" href="javascript:void(0);">{{special.name}}</a></td>
+            <td>{{special.location}}</td>
+            <td>{{special.desc}}</td>
+            <td>{{special.reviewCount}}</td>
+            <td>{{special.rate}}</td>
+            <td>{{special.regdate}}</td>
+            <td>
+              <button class="btn btn-primary btn-primary-bg" (click)="editSpecial(special.id)">Edit</button>
+              <button class="btn btn-danger btn-danger-bg" (click)="deleteSpecial(special.id)" >Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row1">
+        <app-pagenator [page]="1" [total]="5" [callback]="pageHandler" ></app-pagenator>
+      </div>
+    </div>
+  </div>
+</div>
+  
