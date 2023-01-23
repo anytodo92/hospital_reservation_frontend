@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <div class="panel panel-headline underline extend">
+    <div class="panel-heading">
+      <h3 class="panel-title">Specialization > Detail</h3>
+    </div>
+    <div class="panel-body special">
+      <div class="row1">
+        <div class="titl"><label for="">Name</label></div>
+        <div class="contt">{{special.name}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Type</label></div>
+        <div class="contt">{{specTypeList[special.type]}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Small Image</label></div>
+        <div class="contt">
+          <div class="image-upload"><img src="{{special.smallImage}}" /></div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Big Image</label></div>
+        <div class="contt">
+          <div class="image-upload big"><img src="{{special.bigImage}}" /></div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Screen Image</label></div>
+        <div class="contt">
+          <div class="image-upload" *ngFor="let thumb of special.thumbs; let num = index;">
+            <img src="{{thumb}}" />
+          </div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Url</label></div>
+        <div class="contt">{{special.url}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Location</label></div>
+        <div class="contt">{{special.location}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Longitude</label></div>
+        <div class="contt">{{special.longitude}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Latitude</label></div>
+        <div class="contt">{{special.latitude}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Tel</label></div>
+        <div class="contt">{{special.tel}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Description</label></div>
+        <div class="contt">{{special.desc}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Review</label></div>
+        <div class="contt">{{special.reviewCount}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Rate</label></div>
+        <div class="contt">
+          <div>{{special.rate}}</div>
+          <div class="margintop10">
+            <p>Facility ambiance : {{special.eachRate.facility_ambiance}}</p>
+            <p>Professionalism : {{special.eachRate.professionalism}}</p>
+            <p>Time efficiency : {{special.eachRate.time_efficiency}}</p>
+            <p>Customer service : {{special.eachRate.customer_service}}</p>
+            <p>Over all Experience : {{special.eachRate.over_all_experience}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Date &amp; Time</label></div>
+        <div class="contt">{{special.regdate}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl brd-clear">&nbsp;</div>
+        <div class="contt">
+          <button (click)="back()" class="btn btn-default">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
