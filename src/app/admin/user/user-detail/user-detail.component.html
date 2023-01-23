@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="panel panel-headline underline extend">
+    <div class="panel-heading">
+      <h3 class="panel-title">User > Detail</h3>
+    </div>
+    <div class="panel-body">
+      <div class="photo">
+        <img src="{{userInfo.image}}" />
+        <div class="margintop20" align="center">
+          <button class="btn btn-default" (click)="back()">Back</button>
+        </div>
+      </div>
+      <div class="bdy">
+        <div class="row1">
+          <div class="titl"><label for="">Name :</label></div>
+          <div class="contt">{{userInfo.name}}</div>
+        </div>
+        <div class="row1">
+          <div class="titl"><label for="">Email Address :</label></div>
+          <div class="contt">{{userInfo.email}}</div>
+        </div>
+        <div class="row1">
+          <div class="titl"><label for="">State :</label></div>
+          <div class="contt">{{userInfo.state}}</div>
+        </div>
+        <div class="row1">
+          <div class="titl"><label for="">City :</label></div>
+          <div class="contt">{{userInfo.city}}</div>
+        </div>  
+        <div class="row1">
+          <div class="titl"><label for="">Location :</label></div>
+          <div class="contt">{{userInfo.location}}</div>
+        </div>
+        <div class="row1">
+          <div class="titl"><label for="">Date &amp; Time :</label></div>
+          <div class="contt">{{userInfo.regdate}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

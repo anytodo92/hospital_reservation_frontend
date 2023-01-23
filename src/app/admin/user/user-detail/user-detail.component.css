@@ -1,0 +1,26 @@
+.photo {
+    float: left;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.bdy {
+    margin-left: 180px;
+}
+.row1 {
+    margin: 10px auto;
+}
+.titl {
+    float: left;
+    width: 30%;
+}
+
+.contt {
+    float: left;
+    width: 65%;
+    margin-left: 5%;
+}
