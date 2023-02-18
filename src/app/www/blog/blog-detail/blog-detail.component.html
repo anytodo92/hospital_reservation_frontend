@@ -1,0 +1,72 @@
+<div class="feed">
+  <div class="container">
+    <div class="user">
+      <div class="info">
+        <div class="avatar"><img src="{{blog.userImage}}" /></div>
+        <div class="contt">
+          <p class="margintop10">{{blog.userName}}&nbsp;
+            <span class="contact"><i class="fa fa-envelope"></i></span>
+          </p>
+        </div>
+      </div>
+      <div class="recent-blog">
+        <div ><h4>Recent reviews of this user</h4></div>
+        <div class="list">
+          <div class="one" *ngFor="let blog of recentBlogList">
+            <div class="photo">
+              <img src="{{blog.specialImage}}" />
+            </div>
+            <div class="contt">
+              <p class="clr-black">{{blog.specialName}}</p>
+              <p>Dokita rating&nbsp;<i class="fa fa-thumbs-up clr-primary"></i>&nbsp;<font class="clr-navy">{{blog.rate}}</font>&nbsp;<i>{{blog.title}}</i></p>
+              <p>{{blog.content}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="detail-blog">
+      <div class="info">
+        <h3><b>{{blog.title}}</b></h3>
+        <p class="margintop10"><i class="fa fa-tag clr-blue"></i>&nbsp;{{typeList[blog.type]}}</p>
+        <p class="margintop10">{{blog.content}}</p>
+      </div>
+      <div class="sect">
+        <div class="rating-bar margintop10">
+          <div class="rating-lb">
+            <div class="one" *ngFor="let rate of rateList; let num = index">
+              <i class="fa fa-square {{rateColorClassList[num]}}" ></i>&nbsp;{{rate}}
+            </div>  
+          </div>
+          <app-rating-slidebar [label]="'Facility ambiance'" [index]="0"
+            [slide]="false" [value]="blog.eachRate.facility_ambiance" 
+            ></app-rating-slidebar>
+          <app-rating-slidebar [label]="'Professionalism'" [index]="1"
+            [slide]="false" [value]="blog.eachRate.professionalism" 
+            ></app-rating-slidebar>
+          <app-rating-slidebar [label]="'Time efficiency'" [index]="2"
+            [slide]="false" [value]="blog.eachRate.time_efficiency" 
+            ></app-rating-slidebar>
+          <app-rating-slidebar [label]="'Customer service'" [index]="3"
+            [slide]="false" [value]="blog.eachRate.customer_service" 
+            ></app-rating-slidebar>
+          <app-rating-slidebar [label]="'Over all Experience'" [index]="4"
+            [slide]="false" [value]="blog.eachRate.over_all_experience" 
+            ></app-rating-slidebar>
+        </div>
+        <div class="row1 margintop30">
+          <div class="rating-score">Total Score : <font class="clr-navy f-sz20"><b>{{blog.rate}}</b></font></div>
+        </div>
+      </div>
+      <div class="sect">
+        <div class="titl">Screen Image</div>
+        <div class="row1 margintop10">
+          <div class="image-upload" *ngFor="let screen of blog.screenImage; let num = index;">
+            <img src="{{screen}}" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
