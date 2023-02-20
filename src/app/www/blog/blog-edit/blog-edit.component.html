@@ -1,0 +1,118 @@
+<div class="feed">
+  <div class="container">
+    <div class="recent-blog">
+      <div><h4>Recent reviews of this property</h4></div>
+      <div class="list">
+        <div class="one" *ngFor="let blog of recentBlogList">
+          <div class="photo">
+            <img src="{{blog.userImage}}" />
+          </div>
+          <div class="contt">
+            <p class="clr-black">{{blog.userName}}</p>
+            <p>Dokita rating&nbsp;<i class="fa fa-thumbs-up clr-primary"></i>&nbsp;<font class="clr-navy">{{blog.rate}}</font>&nbsp;<i>{{blog.title}}</i></p>
+            <p>{{blog.content}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="write-blog">
+      <div class="info">
+        <div class="img"><img src="{{blog.specialImage}}" /></div>
+        <div class="desc">
+          <div><h3><b>{{blog.specialName}}</b></h3></div>
+          <p>{{blog.specialLocation}}</p>
+        </div>
+      </div>
+      <div class="under-text"><b>Your first-hand experiences really help other patients. Thanks!</b></div>
+      <div class="sect">
+        <div class="titl {{rateClass}}">
+          <i class="fa fa-check-circle mark-check"></i>
+          <i class="fa fa-exclamation-circle mark-exc"></i>
+          Your overall rating of this property
+        </div>
+        <div class="rating-bar margintop10">
+          <div class="rating-lb">
+            <div class="one" *ngFor="let rate of rateList; let num = index">
+              <i class="fa fa-square {{rateColorClassList[num]}}" ></i>&nbsp;{{rate}}
+            </div>  
+          </div>
+          <app-rating-slidebar [label]="'Facility ambiance'" [index]="0"
+            [slide]="true" [value]="blog.eachRate.facility_ambiance" 
+            (slideHandler)="slideRate($event)"></app-rating-slidebar>
+          <app-rating-slidebar [label]="'Professionalism'" [index]="1"
+            [slide]="true" [value]="blog.eachRate.professionalism" 
+            (slideHandler)="slideRate($event)"></app-rating-slidebar>
+          <app-rating-slidebar [label]="'Time efficiency'" [index]="2"
+            [slide]="true" [value]="blog.eachRate.time_efficiency" 
+            (slideHandler)="slideRate($event)"></app-rating-slidebar>
+          <app-rating-slidebar [label]="'Customer service'" [index]="3"
+            [slide]="true" [value]="blog.eachRate.customer_service" 
+            (slideHandler)="slideRate($event)"></app-rating-slidebar>
+          <app-rating-slidebar [label]="'Over all Experience'" [index]="4"
+            [slide]="true" [value]="blog.eachRate.over_all_experience" 
+            (slideHandler)="slideRate($event)"></app-rating-slidebar>
+        </div>
+        <div class="row1 margintop30">
+          <div class="rating-score">Total Score : <font class="clr-navy f-sz20"><b>{{currentRate}}</b></font></div>
+        </div>
+      </div>
+      <div class="sect">
+        <div class="titl {{titleClass}}">
+          <i class="fa fa-check-circle mark-check"></i>
+          <i class="fa fa-exclamation-circle mark-exc"></i>
+          Title of your review
+        </div>
+        <div class="row1 margintop10">
+          <div class="input-box">
+            <input type="text" (focus)="focusTitle()" (blur)="blurTitle()" [(ngModel)]="title" />
+          </div>
+        </div>
+      </div>
+      <div class="sect">
+        <div class="titl {{contentClass}}">
+          <i class="fa fa-check-circle mark-check"></i>
+          <i class="fa fa-exclamation-circle mark-exc"></i>
+          review
+        </div>
+        <div class="row1 margintop10">
+          <div class="input-box">
+            <textarea (focus)="focusContent()" (blur)="blurContent()" [(ngModel)]="content"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="sect">
+        <div class="titl {{typeClass}}">
+          <i class="fa fa-check-circle mark-check"></i>
+          <i class="fa fa-exclamation-circle mark-exc"></i>
+          type
+        </div>
+        <div class="row1 margintop10">
+          <div class="input-box" style="width: auto;">
+            <select (change)="changeType()" (focus)="focusType()" (blur)="blurType()" [(ngModel)]="type" >
+              <option value=""></option>
+              <option *ngFor="let type of typeList; let num = index" value="{{num}}" >{{type}}</option>
+            </select>
+          </div>
+          
+        </div>
+      </div>
+      <div class="sect">
+        <div class="titl">Screen Image</div>
+        <div class="row1 margintop10">
+          <div class="image-upload" *ngFor="let screen of screenImage; let num = index;">
+            <img src="assets/images/noimage.png" />
+            <div class="sel-btn">Select Image
+              <input class="form-control" type="file" [(ngModel)]="screenImage[num]" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sect">
+          <p class="titl">Submit your review</p>
+          <p>I certify that this review is based on my own experience and is my genuine opinion of this specialization.</p>
+          <p class="margintop50"><button (click)="submitBlog()" class="btn btn-primary">Submit your review</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+  

@@ -1,0 +1,116 @@
+.feed {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.recent-blog {
+    float: right;
+    width: 35%;
+    padding-left: 15px;
+}
+
+.recent-blog .list {
+    position: relative;
+    display: block;
+}
+
+.recent-blog .one {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 5px;
+    border-bottom: 3px solid #fff;
+    background-color: #e8f4fc;
+}
+
+.recent-blog .one .photo {
+    float: left;
+    width: 15%;
+}
+
+.recent-blog .one img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.recent-blog .one .contt {
+    margin-left: 16%;
+}
+
+.recent-blog .one .contt p:nth-child(1) {
+    color: #000a12;
+
+}
+
+.write-blog {
+    margin-right: 35%;
+    border-right: 2px solid #ddd;
+    padding-right: 30px;
+}
+
+.write-blog .info {
+    display: inline-block;
+    width: 100%;
+}
+
+.write-blog .info .img { float: left; }
+.write-blog .info .img > img { width: 60px; height: 60px; margin-top: 15px; }
+.write-blog .info .desc { margin-left: 70px; }
+.write-blog .under-text { 
+    margin-top: 20px;
+    padding-bottom: 10px; 
+    color: #000a12; 
+    border-bottom: 1px solid #ddd; 
+    font-size: 1.6rem;
+}
+.write-blog .sect { margin-top: 15px; }
+.write-blog .titl { color: #000a12; font-weight: bold; }
+.write-blog .titl .fa { display: none; font-size: 1.5rem; }
+.write-blog .titl.stand .mark-check { color: #666; display: inline; }
+.write-blog .titl.succ .mark-check { color: #0e740e; }
+.write-blog .titl .mark-exc { color: #ef6945; }
+.write-blog .titl.succ { color: #000a12; }
+.write-blog .titl.succ .mark-check { display: inline; }
+.write-blog .titl.err { color: #ef6945; }
+.write-blog .titl.err .mark-exc { display: inline; }
+.write-blog .sect .starbar {
+    float: left;
+    font-size: 3rem;
+}
+.write-blog .sect .starbar .fa { cursor: pointer; }
+
+.write-blog .rating-score {
+    color: #000a12;
+    text-indent: 20px;
+    float:left;
+}
+
+.write-blog .mark {
+    display: inline-block;
+    position: relative;
+    margin-left: 25px;
+}
+.write-blog .mark .lt {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    background-color: #0e740e;
+    transform: rotate(45deg);
+    left: -10px;
+    top: 4px;
+}
+
+.write-blog .mark .rt {
+    float:left;
+    background-color: #0e740e;
+    color: #fff;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    padding: 6px 25px 6px 12px;
+}
+
+.write-blog .input-box textarea {
+    height: 100px;
+}
+.write-blog .input-box select {
+    width: 120px;
+}
