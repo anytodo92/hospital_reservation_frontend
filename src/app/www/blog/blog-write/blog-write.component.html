@@ -1,0 +1,127 @@
+<div class="feed">
+  <div class="container">
+    <div class="recent-blog">
+      <div><h4>Recent reviews of this property</h4></div>
+      <div class="list">
+        <div class="one" *ngFor="let blog of recentBlogList">
+          <div class="photo">
+            <img src="{{blog.userImage}}" />
+          </div>
+          <div class="contt">
+            <p class="clr-black">{{blog.userName}}</p>
+            <p>Dokita rating&nbsp;<i class="fa fa-thumbs-up clr-primary"></i>&nbsp;<font class="clr-navy">{{blog.rate}}</font>&nbsp;<i>{{blog.title}}</i></p>
+            <p>{{blog.content}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="write-blog">
+      <div class="info">
+        <div class="img"><img src="{{special.smallImage}}" /></div>
+        <div class="desc">
+          <div><h3><b>{{special.name}}</b></h3></div>
+          <p>{{special.location}}</p>
+        </div>
+      </div>
+      <div class="under-text"><b>Your first-hand experiences really help other patients. Thanks!</b></div>
+      <div class="sect">
+        <div class="titl {{rateClass}}">
+          <i class="fa fa-check-circle mark-check"></i>
+          <i class="fa fa-exclamation-circle mark-exc"></i>
+          Your overall rating of this property
+        </div>
+        <!--<div class="row1 margintop10">
+          <div class="starbar">
+            <i *ngFor="let clazz of starClassList; let num = index" class="fa fa-star {{starClassList[num]}}" (mouseenter)="overStar(num)" (mouseleave)="leaveStar(num)" (click)="selectStar(num)"></i>
+            <i class="fa fa-star {{starClassList[0]}}" (mouseenter)="overStar(0)" 
+            (mouseleave)="leaveStar(0)" (click)="selectStar(0)"></i><i class="fa fa-star {{starClassList[1]}}" (mouseenter)="overStar(1)" 
+            (mouseleave)="leaveStar(1)" (click)="selectStar(1)"></i><i class="fa fa-star {{starClassList[2]}}" (mouseenter)="overStar(2)" 
+            (mouseleave)="leaveStar(2)" (click)="selectStar(2)"></i><i class="fa fa-star {{starClassList[3]}}" (mouseenter)="overStar(3)" 
+            (mouseleave)="leaveStar(3)" (click)="selectStar(3)"></i><i class="fa fa-star {{starClassList[4]}}" (mouseenter)="overStar(4)" 
+            (mouseleave)="leaveStar(4)" (click)="selectStar(4)"></i>
+          </div>
+          <div class="mark">
+            <div class="lt"></div><div class="rt">{{currentRateText}}</div>
+          </div>
+        </div>-->
+        <div class="rating-bar margintop10">
+          <div class="rating-lb">
+            <div class="one" *ngFor="let rate of rateList; let num = index">
+              <i class="fa fa-square {{rateColorClassList[num]}}" ></i>&nbsp;{{rate}}
+            </div>  
+          </div>
+          <app-rating-slidebar [label]="'Facility ambiance'" [index]="0"
+            [slide]="true" [value]="0" (slideHandler)="slideRate($event)"></app-rating-slidebar>
+          <app-rating-slidebar [label]="'Professionalism'" [index]="1"
+            [slide]="true" [value]="0" (slideHandler)="slideRate($event)"></app-rating-slidebar>
+          <app-rating-slidebar [label]="'Time efficiency'" [index]="2"
+            [slide]="true" [value]="0" (slideHandler)="slideRate($event)"></app-rating-slidebar>
+          <app-rating-slidebar [label]="'Customer service'" [index]="3"
+            [slide]="true" [value]="0" (slideHandler)="slideRate($event)"></app-rating-slidebar>
+          <app-rating-slidebar [label]="'Over all Experience'" [index]="4"
+            [slide]="true" [value]="0" (slideHandler)="slideRate($event)"></app-rating-slidebar>
+        </div>
+        <div class="row1 margintop30">
+          <div class="rating-score">Total Score : <font class="clr-navy f-sz20"><b>{{currentRate}}</b></font></div>
+        </div>
+      </div>
+      <div class="sect">
+        <div class="titl {{titleClass}}">
+          <i class="fa fa-check-circle mark-check"></i>
+          <i class="fa fa-exclamation-circle mark-exc"></i>
+          Title of your review
+        </div>
+        <div class="row1 margintop10">
+          <div class="input-box">
+            <input type="text" (focus)="focusTitle()" (blur)="blurTitle()" [(ngModel)]="title" />
+          </div>
+        </div>
+      </div>
+      <div class="sect">
+        <div class="titl {{contentClass}}">
+          <i class="fa fa-check-circle mark-check"></i>
+          <i class="fa fa-exclamation-circle mark-exc"></i>
+          review
+        </div>
+        <div class="row1 margintop10">
+          <div class="input-box">
+            <textarea (focus)="focusContent()" (blur)="blurContent()" [(ngModel)]="content"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="sect">
+        <div class="titl {{typeClass}}">
+          <i class="fa fa-check-circle mark-check"></i>
+          <i class="fa fa-exclamation-circle mark-exc"></i>
+          type
+        </div>
+        <div class="row1 margintop10">
+          <div class="input-box" style="width: auto;">
+            <select (change)="changeType()" (focus)="focusType()" (blur)="blurType()" [(ngModel)]="type" >
+              <option value=""></option>
+              <option *ngFor="let type of typeList; let num = index" value="{{num}}" >{{type}}</option>
+            </select>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="sect">
+        <div class="titl">Screen Image</div>
+        <div class="row1 margintop10">
+          <div class="image-upload" *ngFor="let screen of screenImage; let num = index;">
+            <img src="assets/images/noimage.png" />
+            <div class="sel-btn">Select Image
+              <input class="form-control" type="file" [(ngModel)]="screenImage[num]" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sect">
+          <p class="titl">Submit your review</p>
+          <p>I certify that this review is based on my own experience and is my genuine opinion of this specialization.</p>
+          <p class="margintop50"><button (click)="submitBlog()" class="btn btn-primary">Submit your review</button></p>
+      </div>
+    </div>
+  </div>
+</div>
