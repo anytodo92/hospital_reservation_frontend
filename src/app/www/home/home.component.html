@@ -1,0 +1,48 @@
+<app-main-banner></app-main-banner>
+
+<section class="section-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Welcome to NIGERIA Specializations</h3>
+        <p>The "HealthCare" is open to everyone every day and provides primary health care and cutting-edge medicine in a central location in Abuja. We use our superior academic knowledge to treat a wide range of health issues, taking a personal touch and utilizing highly specialized and up-to-date research.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row1 underline">
+          <h2 class="floatleft">Top Specializatons</h2>
+          <button class="btn btn-primary btn-small floatright margintop10" (click)="goSpecialList()" >See All</button>
+        </div>
+        <div>Breakthrough care now in over 200 locations near you...</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="special-list"> 
+        <div class="special-list-solid clearfix"> 
+          <app-special-item *ngFor="let special of specialList" 
+            [special]="special" [viewMode]="2" ></app-special-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="margintop30">
+  <div class="container">
+    <div class="col-md-12">
+      <!-- Heading and para -->
+      <div><h2>Why Choose Us?</h2></div>
+      <p class="margintop10">We are the first choice for care in Nigeria, not only for our expert medicine and amazing facilities, but also because of our difference-making doctors who choose to work and live, to help and heal here, and the warm and caring staff who pride themselves on impacting lives in their very own community – right here in Abuja.
+
+          These are the people you turn to. Here is where the can-do spirit of our people and the commitment of our doctors make big-city medicine more than possible -  they make it real.
+          
+          Because we’re as close to your best interests as we are close to home. </p>
+    </div>
+  </div>
+</div>
