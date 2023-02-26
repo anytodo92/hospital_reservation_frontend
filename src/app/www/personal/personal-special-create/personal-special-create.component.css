@@ -1,0 +1,33 @@
+.special {
+    margin-left: 20px;
+}
+.special .content {
+    width: 100%;
+    display: inline-block;
+}
+.special .row1 {
+    padding: 10px 20px;
+}
+
+.special .titl {
+    float: left;
+    width: 25%;
+    margin-left: 10px;
+    border-right: 1px solid #ddd;
+}
+
+.special .contt {
+    float: left;
+    width: 65%;
+    margin-right:10px;
+    margin-left:10px;
+}
+
+.special .err {
+    color: #ef6945;
+    display: none;
+}
+
+.special .err.active {
+    display: block;
+}
