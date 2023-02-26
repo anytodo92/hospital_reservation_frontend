@@ -1,0 +1,51 @@
+.profile {
+    margin-left: 20px;
+}
+.profile .row1 {
+    padding: 10px 20px;
+}
+
+.profile .photo {
+    position: relative;
+    display: inline-block;
+}
+
+.profile .photo img {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+}
+
+.profile .photo .edit {
+    position: absolute;
+    margin-left: 10px;
+    right: -50px;
+    bottom: 0;
+}
+.profile .photo .edit input[type="file"] {
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 30px;
+}
+
+.profile .titl {
+    float: left;
+    width: 25%;
+    margin-left: 10%;
+}
+
+.profile .contt {
+    float: left;
+    width: 55%;
+    margin-right:10%;
+}
+
+.profile .err {
+    color: #ef6945;
+    display: none;
+}
+
+.profile .err.active {
+    display: block;
+}

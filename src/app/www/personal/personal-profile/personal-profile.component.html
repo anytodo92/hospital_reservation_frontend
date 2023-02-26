@@ -1,0 +1,67 @@
+<div class="profile">
+  <div class="row1 underline" style="padding:0">
+    <h3>Profile</h3>
+  </div>
+  <div class="row1" align="center">
+    <span class="photo">
+      <img src="/assets/images/avatar.png" />
+      <span class="edit">
+        <a class="link-bb" href="javascript:void(0);">Edit</a>
+        <input type="file" value="" />
+      </span>
+    </span>
+  </div>
+  <div class="row1">
+    <div class="titl"><label for="">Name</label></div>
+    <div class="contt">
+      <div class="input-box"><input type="text" (blur)="checkName()" [(ngModel)]="name" /></div>
+      <div class="err {{nameClass}}">
+        <i class="fa fa-exclamation-circle"></i>
+        This filed is required.
+      </div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="titl"><label for="">Email Address</label></div>
+    <div class="contt">
+      <div class="input-box"><input type="text" (blur)="checkEmail()" [(ngModel)]="email" /></div>
+      <div class="err {{emailClass}}">
+        <i class="fa fa-exclamation-circle"></i>
+        This filed is required.
+      </div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="titl"><label for="">State</label></div>
+    <div class="contt">
+      <div class="input-box"><input type="text" (blur)="checkState()" [(ngModel)]="state" /></div>
+      <div class="err {{stateClass}}">
+        <i class="fa fa-exclamation-circle"></i>
+        This filed is required.
+      </div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="titl"><label for="">City</label></div>
+    <div class="contt">
+      <div class="input-box"><input type="text" (blur)="checkCity()" [(ngModel)]="city" /></div>
+      <div class="err {{cityClass}}">
+        <i class="fa fa-exclamation-circle"></i>
+        This filed is required.
+      </div>
+    </div>
+  </div>  
+  <div class="row1">
+    <div class="titl"><label for="">Location</label></div>
+    <div class="contt">
+      <div class="input-box"><input type="text" (blur)="checkLocation()" [(ngModel)]="location" /></div>
+      <div class="err {{locationClass}}">
+        <i class="fa fa-exclamation-circle"></i>
+        This filed is required.
+      </div>
+    </div>
+  </div>
+  <div class="row1" align="center">
+    <button class="btn btn-primary" (click)="save()">Save Profile</button>
+  </div>
+</div>
