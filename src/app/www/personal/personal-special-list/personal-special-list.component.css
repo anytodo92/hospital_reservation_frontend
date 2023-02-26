@@ -1,0 +1,16 @@
+.special {
+    margin-left: 20px;
+}
+.special .row1 {
+    padding: 10px 20px;
+}
+
+.special .list {
+    display: inline-block;
+    width: 100%;
+}
+.special .btn-success {
+    float: left;
+    margin: 13px 0 0 15px;
+}
+
