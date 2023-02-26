@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="personal">
+    <div class="submenu">
+      <ul>
+        <li class="{{profileMenuClass}}" (click)="goSubPage(0)">
+          <div class="row1">
+            <span class="floatleft"><i class="fa fa-user"></i>&nbsp;&nbsp;Profile</span>
+            <span class="floatright"><i class="fa fa-angle-double-right"></i></span>
+          </div>
+        </li>
+        <li class="{{securityMenuClass}}" (click)="goSubPage(1)">
+            <div class="row1">
+              <span class="floatleft"><i class="fa fa-key"></i>&nbsp;&nbsp;Security</span>
+              <span class="floatright"><i class="fa fa-angle-double-right"></i></span>
+            </div>
+          </li>
+        <li class="{{blogMenuClass}}" (click)="goSubPage(2)">
+          <div class="row1">
+            <span class="floatleft"><i class="fa fa-comment"></i>&nbsp;&nbsp;Blog</span>
+            <span class="floatright"><i class="fa fa-angle-double-right"></i></span>
+          </div>
+        </li>
+        <li class="{{specialMenuClass}}" (click)="goSubPage(3)">
+          <div class="row1">
+            <span class="floatleft"><i class="fa fa-th-large"></i>&nbsp;&nbsp;Specialization</span>
+            <span class="floatright"><i class="fa fa-angle-double-right"></i></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
