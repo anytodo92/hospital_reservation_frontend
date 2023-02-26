@@ -1,0 +1,128 @@
+<div class="special">
+  <div class="row1 underline" style="padding:0">
+    <h3>Edit Speialization</h3>
+  </div>
+  <div class="content">
+    <div class="row1">
+        <div class="titl"><label for="">Name</label></div>
+        <div class="contt">
+          <div class="input-box">
+            <input type="text" (blur)="checkName()" [(ngModel)]="name" />
+          </div>
+          <div class="err {{nameClass}}"><i class="fa fa-exclamation-circle"></i>This filed is required.</div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Type</label></div>
+        <div class="contt">
+          <div class="input-box">
+            <select (change)="checkSpecType()" [(ngModel)]="specType">
+              <option *ngFor="let type of specTypeList; let num = index;" value="{{num + 1}}">{{type}}</option>
+            </select>
+          </div>
+          <div class="err {{specTypeClass}}"><i class="fa fa-exclamation-circle"></i>This filed is required.</div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Small Image</label></div>
+        <div class="contt">
+          <div class="image-upload">
+            <img src="{{special.smallImage}}" />
+            <div class="sel-btn">Select Image
+              <input class="form-control" type="file" 
+              (blur)="checkSmallImage()" [(ngModel)]="smallImage" />
+            </div>
+          </div>
+          <div class="err {{smallImageClass}}"><i class="fa fa-exclamation-circle"></i>This filed is required.</div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Big Image</label></div>
+        <div class="contt">
+          <div class="image-upload big">
+            <img src="{{special.bigImage}}" />
+            <div class="sel-btn">Select Image
+              <input class="form-control" type="file" 
+              (blur)="checkBigImage()" [(ngModel)]="bigImage" />
+            </div>
+          </div>
+          <div class="err {{bigImageClass}}"><i class="fa fa-exclamation-circle"></i>This filed is required.</div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Screen Image</label></div>
+        <div class="contt">
+          <div class="image-upload" *ngFor="let screen of screenImage; let num = index;">
+            <img src="{{special.thumbs[num]}}" />
+            <div class="sel-btn">Select Image
+              <input class="form-control" type="file" 
+              (blur)="checkScreenImage()" [(ngModel)]="screenImage[num]" />
+            </div>
+          </div>
+          <div class="err {{screenImageClass}}"><i class="fa fa-exclamation-circle"></i>This filed is required.</div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Url</label></div>
+        <div class="contt">
+          <div class="input-box">
+            <input type="text" (blur)="checkUrl()" [(ngModel)]="url" />
+          </div>
+          <div class="err {{urlClass}}"><i class="fa fa-exclamation-circle"></i>This filed is required.</div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Location</label></div>
+        <div class="contt">
+          <div class="input-box">
+            <input type="text" (blur)="checkLocation()" [(ngModel)]="location" />
+          </div>
+          <div class="err {{locationClass}}"><i class="fa fa-exclamation-circle"></i>This filed is required.</div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Longitude</label></div>
+        <div class="contt">
+          <div class="input-box">
+            <input type="text" (blur)="checkLongitude()" [(ngModel)]="longitude" />
+          </div>
+          <div class="err {{longitudeClass}}"><i class="fa fa-exclamation-circle"></i>This filed is required.</div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Latitude</label></div>
+        <div class="contt">
+          <div class="input-box">
+            <input type="text" (blur)="checkLatitude()" [(ngModel)]="latitude" />
+          </div>
+          <div class="err {{latitudeClass}}"><i class="fa fa-exclamation-circle"></i>This filed is required.</div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Tel</label></div>
+        <div class="contt">
+          <div class="input-box">
+            <input type="text" (blur)="checkTel()" [(ngModel)]="tel" />
+          </div>
+          <div class="err {{telClass}}"><i class="fa fa-exclamation-circle"></i>This filed is required.</div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Description</label></div>
+        <div class="contt">
+          <div class="input-box">
+            <textarea (blur)="checkDesc()" [(ngModel)]="desc"></textarea>
+          </div>
+          <div class="err {{descClass}}"><i class="fa fa-exclamation-circle"></i>This filed is required.</div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl brd-clear">&nbsp;</div>
+        <div class="contt">
+          <button (click)="save()" class="btn btn-primary">Save</button>&nbsp;&nbsp;&nbsp;
+          <button (click)="back()" class="btn btn-default">Back</button>
+        </div>
+      </div>    
+  </div>
+  
+</div>
