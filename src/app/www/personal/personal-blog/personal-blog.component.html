@@ -1,0 +1,12 @@
+<div class="blog">
+  <div class="row1 underline" style="padding:0">
+    <h3>Blogs</h3>
+  </div>
+  <div class="list">
+    <app-blog-item *ngFor="let blog of blogList" [blog]="blog" [mine]="true"
+      (editHandler)="editBlog($event)" (deleteHandler)="deleteBlog($event)"></app-blog-item>
+  </div>
+  <div class="margintop30" align="center">
+    <app-pagenator [total]="5" [page]="1" [callback]="pageHandler" ></app-pagenator>
+  </div>
+</div>
