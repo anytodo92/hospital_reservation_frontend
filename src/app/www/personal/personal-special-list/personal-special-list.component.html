@@ -1,0 +1,26 @@
+<div class="special">
+  <div class="row1 underline" style="padding:0">
+    <div class="floatleft">
+      <h3 class="floatleft">Specializations</h3>
+      <button (click)="createSpecial()" class="btn btn-success floatleft">Create New</button>
+    </div>
+    <div class="floatright view-mode">
+      <div class="btn {{listViewModeClass}}" (click)="setViewMode(1)"><i class="fa fa-list-ul"></i></div>
+      <div class="btn {{tileViewModeClass}}" (click)="setViewMode(2)"><i class="fa fa-th-large"></i></div>
+    </div>
+  </div>
+  <ul class="spec-tabbar">
+    <li *ngFor="let specType of specTypeList; let num = index" 
+      class="tab {{specTypeClassList[num]}}" (click)="getSpecialList(num)">
+      {{specType}}
+    </li>
+  </ul>
+  <div class="list">
+      <app-special-item *ngFor="let special of specialList" 
+        [special]="special" [viewMode]="viewMode" [mine]="true"
+        (deleteHandler)="deleteSpecial($event)" (editHandler)="editSpecial($event)"></app-special-item>
+  </div>
+  <div class="margintop30">
+    <app-pagenator [page]="1" [total]="5" [callback]="pageHandler" ></app-pagenator>
+  </div>
+</div>
