@@ -1,0 +1,48 @@
+.personal {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+    /*background-color: #e8f4fc;*/
+}
+
+.personal .submenu {
+    float: left;
+    width: 200px;
+}
+
+.personal .submenu > ul {
+    list-style: none;
+    padding: 0;
+    box-shadow: 2px 2px 3px #ddd;
+}
+
+.personal .submenu > ul > li {
+    color: #000a12;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+}
+.personal .submenu .row1 {
+    margin-top: 5px;
+}
+
+.personal .submenu > ul > li .fa {
+    color: #333;
+}
+
+.personal .submenu > ul > li.active {
+    color: #fff;
+    background-color: #0d347d;
+}
+
+.personal .submenu > ul > li.active .fa {
+    color: #fff;
+}
+
+
+.personal .content {
+    margin-left: 220px;
+    background-color: #fff;
+}
