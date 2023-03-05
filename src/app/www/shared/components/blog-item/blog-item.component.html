@@ -1,0 +1,40 @@
+<div class="blog-one" >
+  <div class="info" *ngIf="!mine">
+    <div class="avatar"><img src="{{blog.userImage}}" /></div>
+    <div class="">
+      <p>{{blog.userName}}</p>
+      <p><b>{{blog.userLocation}}</b></p>
+    </div>
+  </div>
+  <div class="info" *ngIf="mine">
+    <div class="avatar clear-border-radius"><img src="{{blog.specialImage}}" /></div>
+    <div class="">
+      <p>{{blog.specialName}}</p>
+      <!--<p><b>{{blog.specialLocation}}</b></p>-->
+    </div>
+  </div>
+  <div class="contt">
+    <div class="clr-black f-sz20"><a [routerLink]="['/blog', 'detail', blog.id]" class="link-gb" href="javascript:void(0);">{{blog.title}}</a></div>
+    <div class="margintop10">{{blog.content}}</div>
+    <div class="margintop10 rate">
+      Dokita rating&nbsp;<i class="fa fa-thumbs-up clr-primary"></i>&nbsp;
+      <font class="clr-navy">{{blog.rate}}</font>&nbsp;Reviewed at 2018-05-29
+      <!--<div class="pop-rating-detail">
+        <app-chart [total]="100" [count]="blog.eachRate.facility_ambiance" 
+          [label]="'Facility ambiance'" [ratioLB]="'point'"></app-chart>
+        <app-chart [total]="100" [count]="blog.eachRate.professionalism" 
+          [label]="'Professionalism'" [ratioLB]="'point'"></app-chart>
+        <app-chart [total]="100" [count]="blog.eachRate.tat_turn_around_time" 
+          [label]="'TAT-Turn Around Time'" [ratioLB]="'point'"></app-chart>
+        <app-chart [total]="100" [count]="blog.eachRate.customer_service" 
+          [label]="'Customer Service'" [ratioLB]="'point'"></app-chart>
+        <app-chart [total]="100" [count]="blog.eachRate.over_all_experience" 
+          [label]="'Over all Experience'" [ratioLB]="'point'"></app-chart>
+      </div>-->
+    </div>
+    <div *ngIf="mine" class="margintop10">
+      <!--<button class="btn btn-primary" (click)="editBlog(blog.id)">Edit</button>-->
+      <button class="btn btn-danger" (click)="deleteBlog(blog.id)">Delete</button>
+    </div>
+  </div>  
+</div>
