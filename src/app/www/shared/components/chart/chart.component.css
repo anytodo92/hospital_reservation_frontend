@@ -1,0 +1,44 @@
+.ch-item {
+    width: 100%;
+    display: inline-block;
+}
+.ch-item .lb:nth-child(1) {
+    float: left;
+    width: 80px;
+    margin-left: 0px;
+    overflow: hidden;
+    word-break: break-all;
+}
+.ch-item .lb:nth-child(3) {
+    float: right;
+    width: 70px;
+    margin-top:-3px;
+    text-align: right;
+}
+.ch-item .lb {
+    font-weight: normal;
+    
+    margin-left: 10px;
+}
+.ch-item .graph {
+    position: relative;
+    margin-top: 5px;
+    margin-left: 90px;
+    margin-right: 80px;
+}
+
+.ch-item .graph p:nth-child(1) {
+    float:left;
+    background-color: #ddd;
+    width: 100%;
+}
+
+.ch-item .graph p:nth-child(2) {
+    position: absolute;
+    background-color: #4c689a;
+    width: 90%;
+}
+
+.ch-item .graph p {
+    height: 10px;
+}
