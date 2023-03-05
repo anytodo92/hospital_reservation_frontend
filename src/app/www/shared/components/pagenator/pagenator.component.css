@@ -1,0 +1,34 @@
+.pagination{margin:0px!important;}
+.pagination > li {display:inline-block;margin-left:1rem;}
+.pagination > li > a, .pagination > li > span {
+    padding: 10px 15px;
+    border: 1px solid #e3e3e3;
+    font-size:1.5rem;color:#6f6f6f;line-height:1.5rem;
+    background-color:transparent;
+}
+
+.pagination > li > a.left,
+.pagination > li > a.right{
+    border:0;
+    font-size:2rem;
+}
+
+.pagination > .active > a, 
+.pagination > .active > span, 
+.pagination > .active > a:hover, 
+.pagination > .active > span:hover, 
+.pagination > .active > a:focus, 
+.pagination > .active > span:focus {
+    background-color: #0d347d;
+    border-color: #0d347d;
+    color: #fff;
+}
+
+.pagination > .disabled > a, 
+.pagination > .disabled > span, 
+.pagination > .disabled > a:hover, 
+.pagination > .disabled > span:hover, 
+.pagination > .disabled > a:focus, 
+.pagination > .disabled > span:focus {
+    background-color:transparent;
+}
