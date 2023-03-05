@@ -1,0 +1,61 @@
+<section class="banner" (window:resize)="onResize($event)">
+  <!-- Slider -->
+  <div id="main_slider" class="flexslider">
+      <ul class="slides">
+        <li>
+          <img src="assets/images/ads/01.png" alt="" />
+          <!--<div class="flex-caption">
+              <h3>BETTER CARE</h3> 
+              <p>WHAT MAKES US BETTER, MAKES YOU BETTER.</p> 
+          </div>-->
+        </li>
+        <li>
+          <img src="assets/images/ads/02.png" alt="" />
+          <!--<div class="flex-caption">
+              <h3>On a Relentless Pursuit of Better Medicine</h3> 
+              <p>Our integrated health system is on a relentless pursuit of better care.</p> 
+          </div>-->
+        </li>
+      </ul>
+  </div>
+  
+  <!-- end slider -->
+  <section class="search-panel">
+    <div class="container">
+      <div class="caption">How may we help you?</div>
+      <div class="box">
+        <div class="type" (click)="clickSelect()" >
+          <div class="lb">
+            <div>{{currentType}}</div>
+            <div class="sel-list {{typeListClass}}">
+              <div class="one" *ngFor="let type of typeList; let num = index" 
+                (click)="clickType(num)">{{type}}</div>
+            </div>
+          </div>
+          <div class="icon"><i class="fa fa-caret-down"></i></div>
+        </div>
+        <div class="nm-loc">
+          <div class="icon"><i class="fa fa-map-marker"></i></div>
+          <input type="text" placeholder="Specialization name or location" 
+            (click)="searchNameOrLocation()" (input)="searchNameOrLocation()" 
+            [(ngModel)]="searchKeyword" />
+          <div class="sel-list {{searchListClass}}">
+              <div class="one" *ngFor="let result of searchResultList; let num = index" 
+                (click)="clickSearchResult(num)">
+                <div class="icon"><i class="fa fa-map-marker"></i></div>
+                <div class="contt">
+                  <p class="nm">{{result.name}}</p>
+                  <p class="loc">{{result.location}}</p>
+                </div>
+              </div>
+              <div class="ret">Search for "<font class="clr-black"><b>Abuja</b></font>"</div>
+          </div>
+        </div>
+        <div class="backdrop" *ngIf="showBackdrop" (click)="clickBackdrop()"></div>
+        <div class="butt" (click)="find()"><i class="fa fa-search"></i>&nbsp;Find</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
