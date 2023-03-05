@@ -1,0 +1,58 @@
+.bubble-50:before {
+    content: "\f005\f005\f005\f005\f005";
+}
+
+.bubble-45:before {
+    content: "\f005\f005\f005\f005\f089";
+}
+
+.bubble-40:before {
+    content: "\f005\f005\f005\f005";
+}
+
+.bubble-35:before {
+    content: "\f005\f005\f005\f089";
+}
+
+.bubble-30:before {
+    content: "\f005\f005\f005";
+}
+
+.bubble-25:before {
+    content: "\f005\f005\f089";
+}
+
+.bubble-20:before {
+    content: "\f005\f005";
+}
+
+.bubble-15:before {
+    content: "\f005\f089";
+}
+
+.bubble-10:before {
+    content: "\f005";
+}
+
+.bubble-5:before {
+    content: "\f089";
+}
+
+.bubble-0:before {
+    content: "";
+}
+
+.bub-container {
+    position: relative;
+    display: inline-block;
+}
+.bub-container .fa:nth-child(1) {
+    float: left;
+    color: #ddd;
+}
+.bub-container .fa:nth-child(2) {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    color: #ef9745;
+}
