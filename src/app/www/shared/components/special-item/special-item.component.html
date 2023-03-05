@@ -1,0 +1,28 @@
+<div class="ti-one col-md-3 text-center" *ngIf="viewMode == 2" >
+  <div class="img"><img src="{{special.smallImage}}" /></div>
+  <div *ngIf="special.status == 1" class="area"><a class="link-blue" href="javascript:void(0);" (click)="goSpecialDetail(special.id)">{{special.name}}</a></div>
+  <div *ngIf="special.status == 0" class="area"><span class="link-blue">{{special.name}}</span></div>
+  <div *ngIf="!mine">Dokita rating&nbsp;<i class="fa fa-thumbs-up clr-primary"></i>&nbsp;<font class="clr-navy">{{special.rate}}</font> ( {{special.reviewCount}} Reviews )</div> 
+  <div *ngIf="!mine" class="desc">{{_desc}}</div>
+  <div *ngIf="mine" class=""><span class="label {{statusClass}}">{{_status}}</span></div>
+  <div *ngIf="mine" class="margintop10">
+    <button class="btn btn-primary" (click)="editSpecial(special.id)">Edit</button>
+    <button class="btn btn-danger" (click)="deleteSpecial(special.id)">Delete</button>
+  </div>
+</div>
+<div class="li-one" *ngIf="viewMode == 1">
+  <div class="info">
+    <div class="img"><img src="{{special.smallImage}}" /></div>
+  </div>
+  <div class="contt">
+      <div class="margintop10"><a class="link-blue" href="javascript:void(0);" (click)="goSpecialDetail(special.id)">{{special.name}}</a></div>
+      <div *ngIf="!mine" class="margintop10">Dokita rating&nbsp;<i class="fa fa-thumbs-up clr-primary"></i>&nbsp;<font class="clr-navy">{{special.rate}}</font> ( {{special.reviewCount}} Reviews )</div> 
+      <div *ngIf="!mine" class="margintop10">{{_desc}}</div>
+      <div *ngIf="mine" class="margintop10"><span class="label {{statusClass}}">{{_status}}</span></div>
+      <div *ngIf="mine" class="margintop10">
+          <button class="btn btn-primary" (click)="editSpecial(special.id)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteSpecial(special.id)">Delete</button>
+      </div>
+  </div>
+</div>
+
