@@ -1,0 +1,126 @@
+<div class="special" (window:resize)="onResize($event)">
+  <div class="container">
+    <div><h2>{{special.name}} <font class="f-sz15 f-normal">({{specTypeList[special.type]}})</font></h2></div>
+    <div class="margintop10">
+        Dokita rating&nbsp;<i class="fa fa-thumbs-up clr-primary"></i>&nbsp;<font class="clr-navy">{{special.rate}}</font> ( {{special.reviewCount}} Reviews )
+    </div>
+    <div class="margintop10">
+      <span class="location"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;{{special.location}}&nbsp;&nbsp;</span>
+      <span class="tel"><i class="fa fa-phone"></i>&nbsp;&nbsp;<a class="link-gb" href="tel:{{special.tel}}">{{special.tel}}</a>&nbsp;&nbsp;</span>
+      <span class="website"><i class="fa fa-laptop"></i>&nbsp;&nbsp;<a class="link-gb" target="_blank" href="{{special.url}}">Specialization Website</a>&nbsp;&nbsp;</span>
+    </div>
+    <div class="margintop10">{{special.desc}}</div>
+  </div>
+  
+  <div class="section-3 margintop10">
+    <div class="container">
+      <div class="row1">
+        <div class="big-img" >
+          <img class="" src="{{special.bigImage}}" width="100%" />
+        </div>
+        <div class="small-img">
+          <ul id="tumb_image">
+            <li *ngFor="let thumb of special.thumbs">
+              <img class="" src="{{thumb}}" width="100%" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="shadow-wrapper shadow-up"></div>
+  </div>
+  
+  <div class="block container">
+    <div class="header"><h2>Overview</h2></div>
+    <div class="map-info">
+        <div style="overflow:hidden;width:100%;height:100%;">
+          <div id="gmap_canvas" style="width:100%;height:100%;"></div>
+          <style>
+            #gmap_canvas img{max-width:none!important;background:none!important}
+          </style>
+        </div>
+    </div>
+    <div class="over-info">
+      <div class="rate">
+        <div class="floatleft"><i class="fa fa-thumbs-up clr-primary"></i>&nbsp;<font class="clr-navy">{{special.rate}}</font></div>
+        <div class="floatright"><font class="clr-blue f-sz15">{{special.reviewCount}} reviews</font></div>
+      </div>
+      <div class="rating-bar chart">
+        <!--<app-chart [total]="special.reviewCount" [count]="special.rateInfo.excellent" 
+          [label]="'Excellent'" [ratioLB]="'%'"></app-chart>
+        <app-chart [total]="special.reviewCount" [count]="special.rateInfo.good" 
+          [label]="'Good'" [ratioLB]="'%'"></app-chart>
+        <app-chart [total]="special.reviewCount" [count]="special.rateInfo.average" 
+          [label]="'Average'" [ratioLB]="'%'"></app-chart>
+        <app-chart [total]="special.reviewCount" [count]="special.rateInfo.fair" 
+          [label]="'Fair'" [ratioLB]="'%'"></app-chart>
+        <app-chart [total]="special.reviewCount" [count]="special.rateInfo.poor" 
+          [label]="'Poor'" [ratioLB]="'%'"></app-chart>-->
+        <div class="rating-lb">
+          <div class="one" *ngFor="let rate of rateList; let num = index">
+            <i class="fa fa-square {{rateColorClassList[num]}}" ></i>&nbsp;{{rate}}
+          </div>  
+        </div>
+        <app-rating-slidebar [label]="'Facility ambiance'" [index]="0"
+          [value]="special.eachRate.facility_ambiance" [slide]="false"
+          ></app-rating-slidebar>
+        <app-rating-slidebar [label]="'Professionalism'" [index]="1"
+          [value]="special.eachRate.professionalism" [slide]="false"
+          ></app-rating-slidebar>
+        <app-rating-slidebar [label]="'Time efficiency'" [index]="2"
+          [value]="special.eachRate.time_efficiency" [slide]="false"
+          ></app-rating-slidebar>
+        <app-rating-slidebar [label]="'Customer service'" [index]="3"
+          [value]="special.eachRate.customer_service" [slide]="false"
+          ></app-rating-slidebar>
+        <app-rating-slidebar [label]="'Over all Experience'" [index]="4"
+          [value]="special.eachRate.over_all_experience" [slide]="false"
+          ></app-rating-slidebar>
+      </div>
+    </div>
+  </div>
+
+  <div class="block container">
+    <div class="header"><h2 class="floatleft">ReViews</h2><button class="btn btn-primary btn-normal floatright margintop20" (click)="blogWrite(special.id)">Write Review</button></div>
+    <div class="cond">
+        <div class="one">
+          <div class=""><h5><b>Specialization Rate</b></h5></div>
+          <div *ngFor="let rate of rateList; let num = index" 
+            class="cs-checkbox {{rateCheckedStatus[num]}}" (click)="clickRate(num)">
+            <i class="fa"></i> {{rate}}
+          </div>
+        </div>
+        <div class="one">
+          <div class=""><h5><b>Specialization Type</b></h5></div>
+          <div *ngFor="let type of typeList; let num = index" 
+            class="cs-checkbox {{typeCheckedStatus[num]}}" (click)="clickType(num)">
+            <i class="fa"></i> {{type}}
+          </div>
+        </div>
+        <!--<div class="one">
+          <div class=""><h5><b>Time of year</b></h5></div>
+          <div class="cs-checkbox active"><i class="fa"></i> Mar-May</div>
+          <div class="cs-checkbox active"><i class="fa"></i> Jun-Aug</div>
+          <div class="cs-checkbox"><i class="fa"></i> Sep-Nov</div>
+          <div class="cs-checkbox"><i class="fa"></i> Dec-Feb</div>
+        </div>-->
+    </div> 
+    <div class="row1 margintop10">
+      <div><h5><b>Show reviews that mention</b></h5></div>
+      <div class="input-box">
+        <i class="fa fa-search clr-primary"></i>
+        <div><input type="text" value="" placeholder="search reviews" /></div>
+      </div>
+    </div> 
+    <div class="row1 margintop10">
+      <div class="alignright"><h6>1-2 of 20 reviews </h6></div>
+      <div class="underline"></div>
+      <div class="blog">
+        <app-blog-item *ngFor="let blog of blogList" [blog]="blog"></app-blog-item>
+      </div>
+      <div class="margintop30" align="center">
+        <app-pagenator [total]="5" [page]="1" [callback]="pageHandler" ></app-pagenator>
+      </div>
+    </div>
+  </div>
+</div>
