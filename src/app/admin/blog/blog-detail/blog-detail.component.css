@@ -1,0 +1,17 @@
+.blog .row1 {
+    padding: 10px 20px;
+}
+
+.blog .titl {
+    float: left;
+    width: 25%;
+    margin-left: 10%;
+    border-right: 1px solid #ddd;
+}
+
+.blog .contt {
+    float: left;
+    width: 50%;
+    margin-right:10%;
+    margin-left:5%;
+}
