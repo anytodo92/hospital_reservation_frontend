@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="panel panel-headline underline extend">
+    <div class="panel-heading">
+      <h3 class="panel-title">Blog > Detail</h3>
+    </div>
+    <div class="panel-body blog">
+      <div class="row1">
+        <div class="titl"><label for="">Specialization Name</label></div>
+        <div class="contt"><a [routerLink]="['/admin', 'special', 'detail', blog.specialId]" class="link-bb" href="javscript:void(0);">{{blog.specialName}}</a></div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">User Name</label></div>
+        <div class="contt"><a [routerLink]="['/admin', 'user', 'detail', blog.userId]" class="link-bb" href="javscript:void(0);">{{blog.userName}}</a></div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Title</label></div>
+        <div class="contt">{{blog.title}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Type</label></div>
+        <div class="contt">{{typeList[blog.type]}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Content</label></div>
+        <div class="contt">{{blog.content}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Total Rate</label></div>
+        <div class="contt">
+          <div>{{blog.rate}}</div>
+          <div class="margintop10">
+            <p>Facility ambiance : {{blog.eachRate.facility_ambiance}}</p>
+            <p>Professionalism : {{blog.eachRate.professionalism}}</p>
+            <p>Time efficiency : {{blog.eachRate.time_efficiency}}</p>
+            <p>Customer service : {{blog.eachRate.customer_service}}</p>
+            <p>Over all Experience : {{blog.eachRate.over_all_experience}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="titl"><label for="">Date &amp; Time</label></div>
+        <div class="contt">{{blog.regdate}}</div>
+      </div>
+      <div class="row1">
+        <div class="titl brd-clear">&nbsp;</div>
+        <div class="contt">
+          <button (click)="back()" class="btn btn-default">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  
